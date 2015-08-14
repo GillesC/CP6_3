@@ -52,7 +52,7 @@ public class grootsteSomMatrix {
 	}
 
 	// verticaal zoeken
-	zoekGrootsteSomKolommen(int[][] matrix){
+	public static int zoekGrootsteSomKolommen(int[][] matrix){
 		int grootsteSom =-1;
 		// per kolom kijken verticaal optellen
 		for(int i=0;i<matrix[0].length;i++){
@@ -76,7 +76,7 @@ public class grootsteSomMatrix {
 	}
 
 	// horizontaal zoeken
-	zoekGrootsteSomRijen(int[][] matrix){
+	public static int zoekGrootsteSomRijen(int[][] matrix){
 		int grootsteSom =-1;
 		// per rij kijken horizontaal optellen
 		for(int i=0;i<matrix.length;i++){
