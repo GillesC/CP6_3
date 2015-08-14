@@ -15,4 +15,4 @@ Output
 Per matrix moet er 1 lijn verschijnen met de grootste som of 0.
 
 Veronderstellingen:
- - getallen zijn allemaal strikt positief (anders als negatief getal tegen kommen tijdens optellen -> som =0 stellen en returnen)
+ - getallen zijn allemaal strikt positief (anders als negatief getal tegen komen tijdens optellen -> som =0 stellen en returnen)
