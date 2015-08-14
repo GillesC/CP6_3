@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class grootsteSomMatrix {
 	private final static int AANTAL_NAAAST_ELKAAR = 4;
+	// de naam Aantal opschuiven is eigenlijk slecht gekozen
+	// eigenlijk is het het aantal - AANTAL_OPSCHUIVINGEN die u vertelt
+	// hoeveel keer de lus moet doorlopen worden
 	private final int AANTAL_OPSCHUIVINGEN = AANTAL_NAAAST_ELKAAR -1;
 
 	public static void main(String[] args) {
