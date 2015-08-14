@@ -14,25 +14,5 @@ Output
 
 Per matrix moet er 1 lijn verschijnen met de grootste som of 0.
 
-Example
-Input:
-3
-5 3
-1 2 3
-3 4 5
-7 8 9
-10 11 12
-13 14 15
-2 2
-1 2
-3 4
-4 4
-1 2 3 4
-5 6 7 8
-9 10 11 12
-13 14 15 16
-
-Output:
-41
-0
-58
+Veronderstellingen:
+ - getallen zijn allemaal strikt positief (anders als negatief getal tegen kommen tijdens optellen -> som =0 stellen en returnen)
