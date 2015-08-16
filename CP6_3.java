@@ -1,19 +1,19 @@
 import java.util.Scanner;
 
-public class grootsteSomMatrix {
+public class gsm {
 	private final static int AANTAL_NAAAST_ELKAAR = 4;
 	// de naam Aantal opschuiven is eigenlijk slecht gekozen
 	// eigenlijk is het het aantal - AANTAL_OPSCHUIVINGEN die u vertelt
 	// hoeveel keer de lus moet doorlopen worden
-	private final int AANTAL_OPSCHUIVINGEN = AANTAL_NAAAST_ELKAAR -1;
+	private final static int AANTAL_OPSCHUIVINGEN = AANTAL_NAAAST_ELKAAR - 1;
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int aantal = sc.nextInt();	//aantal matrices in te lezen
+		int aantal = sc.nextInt(); // aantal matrices in te lezen
 
 		for (int x = 0; x < aantal; x++) {
-			int m = sc.nextInt();	//aantal rijen
-			int n = sc.nextInt();	//aantal kolommen
+			int m = sc.nextInt(); // aantal rijen
+			int n = sc.nextInt(); // aantal kolommen
 			int matrix[][] = new int[m][n];
 
 			for (int i = 0; i < m; i++) {
@@ -26,20 +26,23 @@ public class grootsteSomMatrix {
 		}
 
 	}
-	public static int zoekGrootsteSom(int [][] matrix){
+
+	public static int zoekGrootsteSom(int[][] matrix) {
 
 		// Als matrix' kolommen en rijen kleiner zijn dan 4
-		if(matrix.length<AANTAL_NAAAST_ELKAAR && matrix[0].length<AANTAL_NAAAST_ELKAAR) return 0;
-		
+		if (matrix.length < AANTAL_NAAAST_ELKAAR
+				&& matrix[0].length < AANTAL_NAAAST_ELKAAR)
+			return 0;
+
 		// Als matrix' kolommen kleiner zijn dan 4
 		// dan enkel de rijen bekijken -> verticaal zoeken
-		if(matrix[0].length<AANTAL_NAAAST_ELKAAR){
+		if (matrix[0].length < AANTAL_NAAAST_ELKAAR) {
 			return zoekGrootsteSomKolommen(matrix);
 		}
 
 		// Als matrix' rijen kleiner zijn dan 4
 		// dan enkel de kolommen bekijken -> horizontaal zoeken
-		if(matrix.length<AANTAL_NAAAST_ELKAAR){
+		if (matrix.length < AANTAL_NAAAST_ELKAAR) {
 			return zoekGrootsteSomRijen(matrix);
 		}
 
@@ -47,31 +50,31 @@ public class grootsteSomMatrix {
 		// en de grootste som nemen als oplossing
 
 		// verduidelijking code () ? true: false;
-		// als conditie true is dan -> geef paramter true door anders parameter false
+		// als conditie true is dan -> geef paramter true door anders parameter
+		// false
 		int grootsteSomKolommen = zoekGrootsteSomKolommen(matrix);
 		int grootsteSomRijen = zoekGrootsteSomRijen(matrix);
 		return (grootsteSomKolommen<grootsteSomRijen) ? grootsteSomRijen : grootsteSomKolommen;
-		
 	}
 
 	// verticaal zoeken
-	public static int zoekGrootsteSomKolommen(int[][] matrix){
-		int grootsteSom =-1;
+	public static int zoekGrootsteSomKolommen(int[][] matrix) {
+		int grootsteSom = -1;
 		// per kolom kijken verticaal optellen
-		for(int i=0;i<matrix[0].length;i++){
+		for (int i = 0; i < matrix[0].length; i++) {
 			// hoeveel keer moeten we er 4 samentellen?
 			// dit is aantal rijen - 3
-			for(int r=0;matrix.length-AANTAL_OPSCHUIVINGEN;r++){
+			for (int r = 0;r< matrix.length - AANTAL_OPSCHUIVINGEN; r++) {
 				// r bepaalt de index vanwaar het tellen gaat beginnen
-				
+
 				// 4 opeenvolgende getallen samentellen
-				int som =0;
-				for(int j=0;AANTAL_NAAAST_ELKAAR;j++){
-					int index = r+j;
-					som+=matrix[index][i];
+				int som = 0;
+				for (int j = 0;j< AANTAL_NAAAST_ELKAAR; j++) {
+					int index = r + j;
+					som += matrix[index][i];
 				}
 				// welke som grootst?
-				grootsteSom = (som>grootsteSom) ? som : grootsteSom;
+				grootsteSom = (som > grootsteSom) ? som : grootsteSom;
 			}
 		}
 
@@ -85,12 +88,12 @@ public class grootsteSomMatrix {
 		for(int i=0;i<matrix.length;i++){
 			// hoeveel keer moeten we er 4 samentellen?
 			// dit is aantal kolommen - 3
-			for(int r=0;matrix[].length-AANTAL_OPSCHUIVINGEN;r++){
+			for(int r=0;r< matrix.length - AANTAL_OPSCHUIVINGEN;r++){
 				// r bepaalt de index vanwaar het tellen gaat beginnen
 				
 				// 4 opeenvolgende getallen samentellen
 				int som =0;
-				for(int j=0;AANTAL_NAAAST_ELKAAR;j++){
+				for(int j=0;j<AANTAL_NAAAST_ELKAAR;j++){
 					int index = r+j;
 					som+=matrix[i][index];
 				}
